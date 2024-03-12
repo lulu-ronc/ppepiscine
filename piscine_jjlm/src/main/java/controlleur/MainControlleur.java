@@ -20,33 +20,33 @@ public class MainControlleur {
 	
 	
 
-	public void launchMain() {
-
-		achat.setOnMouseClicked(event -> {
-			try {
-				goToAchat();
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		});
-		
-		verifier.setOnMouseClicked(event -> {
-			try {
-				goToVerifier();
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		});
-		
-		modifier.setOnMouseClicked(event -> {
-			try {
-				goToVerifier();
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		});
-		
-	}
+//	public void launchMain() {
+//
+//		achat.setOnMouseClicked(event -> {
+//			try {
+//				goToAchat();
+//			}catch(Exception e){
+//				e.printStackTrace();
+//			}
+//		});
+//		
+//		verifier.setOnMouseClicked(event -> {
+//			try {
+//				goToVerifier();
+//			}catch(Exception e){
+//				e.printStackTrace();
+//			}
+//		});
+//		
+//		modifier.setOnMouseClicked(event -> {
+//			try {
+//				goToVerifier();
+//			}catch(Exception e){
+//				e.printStackTrace();
+//			}
+//		});
+//		
+//	}
 
 
 	public void goToAchat() throws Exception {
@@ -77,7 +77,7 @@ public class MainControlleur {
 	
 	public void goToModifier() throws Exception {
 		//FXMLLoader loaderAchat = new FXMLLoader(getClass().getResource("achat.fxml"));
-		Parent rootModifier = FXMLLoader.load(getClass().getClassLoader().getResource("vue/verifier.fxml"));
+		Parent rootModifier = FXMLLoader.load(getClass().getClassLoader().getResource("vue/ScanModifTicket.fxml"));
 		Stage stageModifier = new Stage();
 
 		Scene sceneModifier = new Scene(rootModifier, 600, 400);
