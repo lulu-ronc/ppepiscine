@@ -10,7 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	Connection con = new databaseConnection().Connect();
+	Connection con = databaseConnection.getInstance();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
