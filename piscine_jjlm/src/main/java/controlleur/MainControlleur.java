@@ -12,9 +12,10 @@ import javafx.stage.Stage;
 public class MainControlleur {
 	@FXML
 	private Button achat;
-	//private Label achat;
+	private Button verifier;
+	
 
-	public void launchAchat() {
+	public void launchMain() {
 
 		achat.setOnMouseClicked(event -> {
 			try {
@@ -23,6 +24,15 @@ public class MainControlleur {
 				e.printStackTrace();
 			}
 		});
+		
+		verifier.setOnMouseClicked(event -> {
+			try {
+				goToVerifier();
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		});
+		
 	}
 
 
@@ -34,5 +44,15 @@ public class MainControlleur {
 		Scene sceneAchat = new Scene(rootAchat, 600, 400);
 		stageAchat.setScene(sceneAchat);
 		stageAchat.show();
+	}
+	
+	public void goToVerifier() throws Exception {
+		//FXMLLoader loaderAchat = new FXMLLoader(getClass().getResource("achat.fxml"));
+		Parent rootVerifier = FXMLLoader.load(getClass().getClassLoader().getResource("vue/verifier.fxml"));
+		Stage stageVerifier = new Stage();
+
+		Scene sceneVerifier = new Scene(rootVerifier, 600, 400);
+		stageVerifier.setScene(sceneVerifier);
+		stageVerifier.show();
 	}
 }
