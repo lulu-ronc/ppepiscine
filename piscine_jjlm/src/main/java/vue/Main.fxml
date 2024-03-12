@@ -41,7 +41,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Button mnemonicParsing="false" text="modifier ticket">
+      <Button fx:id="modifier" mnemonicParsing="false" text="modifier ticket" onAction="#goToModifier">
          <font>
             <Font size="20.0" />
          </font>
