@@ -7,10 +7,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class AchatControlleur {
+public class VerifierControlleur {
 	@FXML
 	private Button retour;
-
+	
+	public void Valider() throws Exception {
+		
+	}
+	
 	public void RetourMain() throws Exception {
 		//FXMLLoader loaderAchat = new FXMLLoader(getClass().getResource("achat.fxml"));
 		Parent rootMain = FXMLLoader.load(getClass().getClassLoader().getResource("vue/Main.fxml"));

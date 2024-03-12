@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.VerifierControlleur">
    <children>
-      <Button mnemonicParsing="false" text="Return" />
+      <Button fx:id="retour" layoutY="4.0" mnemonicParsing="false" onAction="#RetourMain" text="Retour" />
       <SplitPane orientation="VERTICAL" prefHeight="379.0" prefWidth="600.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="598.0">
@@ -21,16 +20,16 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Label alignment="CENTER" ellipsisString="" layoutX="241.0" layoutY="173.0" prefHeight="17.0" prefWidth="116.0" text="Code ticket" textAlignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="256.0" layoutY="217.0" mnemonicParsing="false" text="Valider">
+                  <Button fx:id="valider" layoutX="256.0" layoutY="217.0" mnemonicParsing="false" text="Valider">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
+                  <TextField fx:id="CodeTicket" layoutX="213.0" layoutY="172.0" promptText="Code ticket">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
                </children>
             </AnchorPane>
         </items>

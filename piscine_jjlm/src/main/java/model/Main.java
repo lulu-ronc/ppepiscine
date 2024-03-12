@@ -23,7 +23,7 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("vue/Main.fxml"));
 
 			//Le conteneur principal de l'application(gère dimensions, style,..)
-			Scene scene1 = new Scene(root, 400, 200);
+			Scene scene1 = new Scene(root, 600, 400);
 			primaryStage.setScene(scene1);
 			primaryStage.show();
 

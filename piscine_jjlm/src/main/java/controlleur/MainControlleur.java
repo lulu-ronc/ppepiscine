@@ -77,7 +77,7 @@ public class MainControlleur {
 	
 	public void goToModifier() throws Exception {
 		//FXMLLoader loaderAchat = new FXMLLoader(getClass().getResource("achat.fxml"));
-		Parent rootModifier = FXMLLoader.load(getClass().getClassLoader().getResource("vue/verifier.fxml"));
+		Parent rootModifier = FXMLLoader.load(getClass().getClassLoader().getResource("vue/ScanModifTicket.fxml"));
 		Stage stageModifier = new Stage();
 
 		Scene sceneModifier = new Scene(rootModifier, 600, 400);
