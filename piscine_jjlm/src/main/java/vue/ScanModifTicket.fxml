@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,12 +12,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.ScanModifTicketControlleur">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane>
          <children>
             <ButtonBar />
-            <Button fx:id="retour" mnemonicParsing="false" onAction="#RetourMain" style="-fx-background-color: #AFFFF8;">
+            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -48,12 +43,14 @@
                   <Text layoutX="49.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Une fois votre ticket scannez pour une raison de sécurité, pouvez vous écrire si joint le numéro du tickets !" textAlignment="CENTER" wrappingWidth="196.0" />
                   <Text layoutX="49.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Si vous n'avez pas votre ticket veuiller donner le code a l'un des administrateur pour qu'il vous le modifie." textAlignment="CENTER" wrappingWidth="196.0" />
                   <TextField layoutX="69.0" layoutY="100.0" style="-fx-border-color: #31E8D9; -fx-border-width: 3; -fx-border-radius: 5;" />
-                  <Button fx:id="valider" layoutX="95.0" layoutY="257.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #3EEA0C; -fx-border-color: black; -fx-border-radius: 5;" text="Valider">
+               </children>
+               <Button layoutX="86.0" layoutY="285.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #3EEA0C; -fx-border-color: black; -fx-border-radius: 5;" text="Valider">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-               </children>
+               
+               
             </AnchorPane>
          </children>
       </TilePane>

@@ -5,6 +5,8 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.TilePane?>
@@ -14,30 +16,37 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane>
+      <AnchorPane style="-fx-background-color: #AFFFF8;">
          <children>
             <ButtonBar />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/fleche.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Text layoutX="230.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Authentification">
                <font>
-                  <Font size="20.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <TilePane alignment="CENTER" prefHeight="358.0" prefWidth="600.0">
+      <TilePane alignment="CENTER" prefHeight="377.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;">
          <VBox.margin>
             <Insets />
          </VBox.margin>
          <children>
             <FlowPane prefHeight="170.0" prefWidth="149.0">
                <children>
-                  <TextField />
+                  <TextField promptText="Identifiant" style="-fx-border-color: #08EAFD; -fx-border-width: 3; -fx-border-radius: 3;" />
                   <FlowPane prefHeight="40.0" prefWidth="148.0" />
-                  <PasswordField />
+                  <PasswordField promptText="Mot de passe" style="-fx-border-color: #08EAFD; -fx-border-radius: 3; -fx-border-width: 3;" />
                   <FlowPane prefHeight="38.0" prefWidth="148.0" />
                   <FlowPane prefHeight="41.0" prefWidth="37.0" />
-                  <Button mnemonicParsing="false" text="Connexion" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: #08EAFD; -fx-background-radius: 15px;" text="Connexion" />     
                </children>
             </FlowPane>
          </children>

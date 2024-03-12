@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.VerifierControlleur">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="retour" layoutY="4.0" mnemonicParsing="false" onAction="#RetourMain" text="Retour" />
-      <SplitPane orientation="VERTICAL" prefHeight="379.0" prefWidth="600.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="598.0">
-               <children>
-                  <Text layoutX="252.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verification">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="valider" layoutX="256.0" layoutY="217.0" mnemonicParsing="false" text="Valider">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <TextField fx:id="CodeTicket" layoutX="213.0" layoutY="172.0" promptText="Code ticket">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+      <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="37.0" style="-fx-background-color: #AFFFF8;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/fleche.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="598.0" style="-fx-background-color: #AFFFF8;">
+         <children>
+            <Text layoutX="245.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vérification">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="257.0" layoutY="209.0" mnemonicParsing="false" style="-fx-background-color: #08EAFD; -fx-background-radius: 15px;" text="Valider">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <TextField layoutX="215.0" layoutY="149.0" prefHeight="31.0" prefWidth="171.0" promptText="Code Ticket" style="-fx-border-color: #08EAFD; -fx-border-width: 3; -fx-border-radius: 3;" />
+         </children>
+      </AnchorPane>
    </children>
 </VBox>

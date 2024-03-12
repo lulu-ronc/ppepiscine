@@ -13,20 +13,27 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.AchatControlleur">
    <children>
-      <AnchorPane>
+      <AnchorPane style="-fx-background-color: #AFFFF8;">
          <children>
             <ButtonBar />
-            <Button fx:id="retour" layoutY="4.0" mnemonicParsing="false" onAction="#RetourMain" text="Retour" />
+            <Button fx:id="retour" layoutY="4.0" mnemonicParsing="false" onAction="#RetourMain" style="-fx-background-color: #AFFFF8;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/fleche.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Text layoutX="248.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les Piscines">
                <font>
-                  <Font size="20.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <TilePane alignment="CENTER" prefHeight="358.0" prefWidth="600.0">
+      <TilePane alignment="CENTER" prefHeight="368.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;">
          <children>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -38,7 +45,7 @@
                   <Insets bottom="20.0" left="50.0" right="50.0" />
                </TilePane.margin>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -50,7 +57,7 @@
                   <Insets bottom="20.0" left="50.0" right="50.0" />
                </TilePane.margin>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -62,7 +69,7 @@
                   <Insets bottom="20.0" left="50.0" right="50.0" />
                </TilePane.margin>
             </Button>
-            <Button mnemonicParsing="false">
+            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
