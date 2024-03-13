@@ -1,11 +1,10 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import org.apache.http.impl.DefaultBHttpClientConnection;
-
+import java.sql.Statement;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 
 public class databaseConnection {
@@ -41,12 +40,31 @@ public class databaseConnection {
 		return connexionDB;
 	}
 
+	
 	public static Connection getInstance(){
 		if(connexionDB== null) {
-			new databaseConnection();
+			 databaseConnection con = new databaseConnection();
+			 connexionDB = con.Connect();
 			System.out.println("connecté");
 		}
 		return connexionDB;	
 	}
 
+
+	public static void closeConnection(Connection connection) throws SQLException{
+		connection.close();
+	}
+	
+	public static void closeStatement(Statement statement) throws SQLException{
+		statement.close();
+	}
+	
+	public static void closePreparedStatement(PreparedStatement preparedStatement) throws SQLException{
+		preparedStatement.close();
+	}
+	
+	public static void closeResultSet(ResultSet resultset) throws SQLException{
+		resultset.close();
+	}
+	
 }

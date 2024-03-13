@@ -6,19 +6,11 @@ public class Piscine {
 	private String adresse ;
 	private int nbr_bassin;
 	
-	public Piscine(int ID, String nom, String adresse, int nbr_bassin) {
-		super();
-		this.ID= ID;
-		this.nom = nom;
-		this.adresse = adresse;
-		this.nbr_bassin = nbr_bassin;	
-	}
-	
-	public int getID() {
+	public int getID() { 
 		return ID;
 	}
 	
-	public void setID(int ID) {
+	public void setID(int ID) { 
 		this.ID=ID;
 	}
 		
@@ -46,5 +38,19 @@ public class Piscine {
 	public void setNbrBassin(int nbr_bassin) {
 		this.nbr_bassin=nbr_bassin;
 	}
+	
+	public Piscine(int ID, String nom, String adresse, int nbr_bassin) {
+		this.ID= ID;
+		this.nom = nom;
+		this.adresse = adresse;
+		this.nbr_bassin = nbr_bassin;	
+	}
+
+	@Override
+	public String toString() {
+		return "Piscine [ID=" + ID + ", nom=" + nom + ", adresse=" + adresse + ", nbr_bassin=" + nbr_bassin + "]";
+	}
+	
+	
 		
 }
