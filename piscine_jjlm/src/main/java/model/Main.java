@@ -1,8 +1,11 @@
 package model;
 
-import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 
 import dao.databaseConnection;
+import dao.piscine.PiscineDAO;
+import dao.piscine.PiscineDAOImpl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,10 +13,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	Connection con = databaseConnection.getInstance();
+	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
+
 		launch(args);
 	}
 
@@ -33,8 +37,9 @@ public class Main extends Application {
 	}
 
 //test
-
-
+	
+	
+	
 }
 
 
