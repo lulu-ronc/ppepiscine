@@ -1,16 +1,16 @@
 package model;
 
 public class Admin {
-	private int Id_admin;
+	private int id_admin;
 	private String mdp;
 	private int rang;
 	
 	public int getId_admin() {
-		return Id_admin;
+		return id_admin;
 	}
 	
-	public void setId_admin(int Id_admin) {
-		this.Id_admin = Id_admin;
+	public void setId_admin(int id_admin) {
+		this.id_admin = id_admin;
 	}
 	public String getMdp() {
 		return mdp;
@@ -26,7 +26,7 @@ public class Admin {
 	}
 	
 	public Admin(int id_admin, String mdp, int rang) {
-		Id_admin = id_admin;
+		this.id_admin = id_admin;
 		this.mdp = mdp;
 		this.rang = rang;
 	}

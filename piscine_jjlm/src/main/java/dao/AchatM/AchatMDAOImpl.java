@@ -1,6 +1,7 @@
-package dao.piscine;
+package dao.AchatM;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,76 +10,77 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.databaseConnection;
-import model.Piscine;
+import model.AchatM;
 
-public class PiscineDAOImpl implements PiscineDAO {
+
+public class AchatMDAOImpl implements AchatMDAO {
 
 	@Override
-	public Piscine get(int id_piscine) throws SQLException {
+	public AchatM get(int id_achat) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		Piscine piscine = null;
+		AchatM achat = null;
 		ResultSet rs =null;
 
 		
-		String sql = "SELECT * FROM Piscine WHERE id_piscine=?";
+		String sql = "SELECT * FROM Achat WHERE id_achat=?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, id_piscine);
+		ps.setInt(1, id_achat);
 		rs = ps.executeQuery();
 		
 
 		if(rs.next()) {
-			int oid = rs.getInt("id_piscine");
-			String nom = rs.getString("nom");
-			String adresse = rs.getString("adresse");
-			int nbr_bassins = rs.getInt("nbr_bassins");
-			piscine = new Piscine(oid,nom,adresse,nbr_bassins);
+			int oid = rs.getInt("id_achat");
+			int id_piscine = rs.getInt("id_piscine");
+			int montant = rs.getInt("montant");
+			Date date_achat = rs.getDate("date_achat");
+			achat = new AchatM(oid, id_piscine, montant, date_achat);
 		}
 		
 		databaseConnection.closeResultSet(rs);
 		databaseConnection.closePreparedStatement(ps);
 		databaseConnection.closeConnection(con);
 
-		return piscine;
+		return achat;
 	}
 
 	@Override
-	public List<Piscine> getAll() throws SQLException {
+	public List<AchatM> getAll() throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "SELECT * FROM Piscine";
+		String sql = "SELECT * FROM Achat";
 		ResultSet rs = null;
 		
-		List <Piscine> listPiscines = new ArrayList<>();
+		List <AchatM> listAchats = new ArrayList<>();
 		Statement stmt = con.createStatement();
 		rs = stmt.executeQuery(sql);
 		
 		while(rs.next()) {
-			int id = rs.getInt("id_piscine");
-			String nom = rs.getString("nom");
-			String adresse = rs.getString("adresse");
-			int nbr_bassins = rs.getInt("nbr_bassins");
+			int id = rs.getInt("id_achat");
+			int id_piscine = rs.getInt("id_piscine");
+			int montant = rs.getInt("montant");
+			Date date_achat = rs.getDate("date_achat");
 			
-			Piscine piscine = new Piscine(id, nom, adresse,nbr_bassins);
-			listPiscines.add(piscine);
+			AchatM achat = new AchatM(id, id_piscine, montant,date_achat);
+			listAchats.add(achat);
 		}
 		
 		databaseConnection.closeResultSet(rs);
 		databaseConnection.closeStatement(stmt);
 		databaseConnection.closeConnection(con);
 		
-		return listPiscines;
+		return listAchats;
 	}
 
 	@Override
-	public int add(Piscine piscine) throws SQLException {
+	public int add(AchatM achat) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "INSERT INTO Piscine(id_piscine,nom,adresse,nbr_bassins) VALUES(?,?)";
+		String sql = "INSERT INTO Achat(id_achat,id_piscine,montant,date_achat) VALUES(?,?,?,?)";
 		
 		
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, piscine.getID());
-		ps.setString(2, piscine.getNom());
-		ps.setString(3, piscine.getAdresse());
-		ps.setInt(4, piscine.getNbrBassin());
+		ps.setInt(1, achat.getId_achat());
+		ps.setInt(2, achat.getId_piscine());
+		ps.setInt(3, achat.getMontant());
+		ps.setDate(4, achat.getDate_achat());
 		
 		int result = ps.executeUpdate();
 		
@@ -88,7 +90,7 @@ public class PiscineDAOImpl implements PiscineDAO {
 		databaseConnection.closeConnection(con);
 		
 		if(result>0) {
-			System.out.println("Insertion de "+piscine.getNom() +" confirmé");
+			System.out.println("Insertion de "+achat.getId_achat() +" confirmé");
 		}else {
 			System.out.println("Echec de l'insertion");
 		}
@@ -96,19 +98,17 @@ public class PiscineDAOImpl implements PiscineDAO {
 		return result;
 	}
 
-	
-
 	@Override
-	public int update(Piscine piscine) throws SQLException {
+	public int update(AchatM achat) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "UPDATE Piscine SET id_piscine=?,nom=?, adresse=?,nbr_bassins=? WHERE id_piscine=?";
+		String sql = "UPDATE Achat SET id_achat=?,id_piscine=?, montant=?,date_achat=? WHERE id_achat=?";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		
-		ps.setInt(1, piscine.getID());
-		ps.setString(2, piscine.getNom());
-		ps.setString(3, piscine.getAdresse());
-		ps.setInt(4, piscine.getNbrBassin());
+		ps.setInt(1, achat.getId_achat());
+		ps.setInt(2, achat.getId_piscine());
+		ps.setInt(3, achat.getMontant());
+		ps.setDate(4, achat.getDate_achat());
 		
 		int result = ps.executeUpdate();
 	
@@ -125,12 +125,12 @@ public class PiscineDAOImpl implements PiscineDAO {
 	}
 
 	@Override
-	public int delete(Piscine piscine) throws SQLException {
+	public int delete(AchatM achat) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "DELETE FROM Piscine WHERE id=?";
+		String sql = "DELETE FROM Achat WHERE id_achat=?";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, piscine.getID());
+		ps.setInt(1, achat.getId_achat());
 		
 		int result = ps.executeUpdate();
 		
@@ -145,8 +145,5 @@ public class PiscineDAOImpl implements PiscineDAO {
 		
 		return result;
 	}
-
-
-
 
 }
