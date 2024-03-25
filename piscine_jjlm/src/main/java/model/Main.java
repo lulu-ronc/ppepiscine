@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -17,7 +18,12 @@ public class Main extends Application {
 
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
-
+		Connection con = databaseConnection.getInstance();
+		PiscineDAO piscineDAO = new PiscineDAOImpl();
+		Piscine piscine = piscineDAO.get(1);
+		System.out.println(piscine);
+		
+		
 		launch(args);
 	}
 
