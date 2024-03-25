@@ -15,7 +15,7 @@ public class databaseConnection {
 	private static final String SQL_SERVER = "PCDEJIM\\SQLEXPRESS01"; 
 	private static final String DATABASE= "UnePiscine";
 
-	public Connection Connect() {
+	public static Connection Connect() {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -33,7 +33,7 @@ public class databaseConnection {
 			ds.setDatabaseName(DATABASE);
 			connexionDB = ds.getConnection();
 			//connexionDB = DriverManager.getConnection(SQL_SERVER, USERNAME, PASSWORD);
-			System.out.println("connecté");
+			//System.out.println("connecté");
 		}catch(SQLException e){
 			System.out.println("Connexion échouée" + e);
 		}
