@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class VerifierControlleur {
+public class AvisVerificationControlleur {
     @FXML
     private Button RetourButton;
     
@@ -22,18 +22,5 @@ public class VerifierControlleur {
         Stage currentStage = (Stage) RetourButton.getScene().getWindow();
         currentStage.close();
     }
-    
-    public void verifyTicket() throws Exception {
-        Parent rootAvisVerif = FXMLLoader.load(getClass().getClassLoader().getResource("vue/AvisVerification.fxml"));
-        Stage stageAvisVerif = new Stage();
-
-        Scene sceneAvisVerif = new Scene(rootAvisVerif, 600, 400);
-        stageAvisVerif.setScene(sceneAvisVerif);
-        stageAvisVerif.show();
-        
-        Stage currentStage = (Stage) RetourButton.getScene().getWindow();
-        currentStage.close();
-    }
-    
     
 }
