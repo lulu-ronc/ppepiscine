@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="736.0" prefWidth="413.0" style="-fx-background-color: cyan;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="178.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paiement" />
+      <Text layoutX="74.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre commande a bien été prise en compte." />
+      <Text layoutX="97.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez suivre les indications du TPE" />
+   </children>
+</AnchorPane>
