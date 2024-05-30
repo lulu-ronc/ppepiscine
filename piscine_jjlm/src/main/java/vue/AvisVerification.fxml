@@ -6,10 +6,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.AvisVerificationControlleur">
    <children>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="406.0" prefWidth="598.0" style="-fx-background-color: #AFFFF8;">
          <children>
+            <Button fx:id="RetourButton" layoutX="256.0" layoutY="307.0" mnemonicParsing="false" onAction="#RetourMain" style="-fx-background-color: #08EAFD; -fx-background-radius: 15px;" text="Accueil">
+            
+                     <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
             <Text layoutX="249.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verification">
                <font>
                   <Font size="20.0" />
@@ -20,17 +26,16 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="164.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre Formule est/était valide jusqu'au &quot;date ticket&quot;" textAlignment="CENTER" wrappingWidth="269.462890625">
+            <Text layoutX="164.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre Formule est/était valide jusqu'au" textAlignment="CENTER" wrappingWidth="269.462890625">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button layoutX="256.0" layoutY="307.0" mnemonicParsing="false" style="-fx-background-color: #08EAFD; -fx-background-radius: 15px;" text="Accueil">
-            
-                     <font>
+            <Text layoutX="246.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;date ticket&quot;">
+               <font>
                   <Font size="20.0" />
                </font>
-            </Button>
+            </Text>
          </children>
       </AnchorPane>
    </children>
