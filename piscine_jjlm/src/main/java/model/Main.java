@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import dao.databaseConnection;
+import dao.formule.FormuleDAO;
+import dao.formule.FormuleDAOImpl;
 import dao.piscine.PiscineDAO;
 import dao.piscine.PiscineDAOImpl;
 import javafx.application.Application;
@@ -17,12 +19,7 @@ public class Main extends Application {
 	
 
 	public static void main(String[] args) throws SQLException {
-		// TODO Auto-generated method stub
-		Connection con = databaseConnection.getInstance();
-		PiscineDAO piscineDAO = new PiscineDAOImpl();
-		Piscine piscine = piscineDAO.get(1);
-		System.out.println(piscine);
-		
+
 		
 		launch(args);
 	}

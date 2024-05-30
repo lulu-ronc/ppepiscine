@@ -14,7 +14,7 @@ import model.Bassins;
 public class BassinsDAOImpl implements BassinsDAO{
 
 	@Override
-	public Bassins get(int id_bassin) throws SQLException {
+	public Bassins read(int id_bassin) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		Bassins bassin = null;
 		ResultSet rs =null;
@@ -69,7 +69,7 @@ public class BassinsDAOImpl implements BassinsDAO{
 	}
 
 	@Override
-	public int add(Bassins bassin) throws SQLException {
+	public int create(Bassins bassin) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		String sql = "INSERT INTO Bassins(id_bassin,id_piscine,nom,places) VALUES(?,?,?,?)";
 		

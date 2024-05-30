@@ -14,7 +14,7 @@ import model.Piscine;
 public class PiscineDAOImpl implements PiscineDAO {
 
 	@Override
-	public Piscine get(int id_piscine) throws SQLException {
+	public Piscine read(int id_piscine) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		Piscine piscine = null;
 		ResultSet rs =null;
@@ -69,7 +69,7 @@ public class PiscineDAOImpl implements PiscineDAO {
 	}
 
 	@Override
-	public int add(Piscine piscine) throws SQLException {
+	public int create(Piscine piscine) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		String sql = "INSERT INTO Piscine(id_piscine,nom,adresse,nbr_bassins) VALUES(?,?)";
 		
