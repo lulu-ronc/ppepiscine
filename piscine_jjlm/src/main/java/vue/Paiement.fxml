@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="736.0" prefWidth="413.0" style="-fx-background-color: cyan;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="178.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paiement" />
-      <Text layoutX="74.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre commande a bien été prise en compte." />
-      <Text layoutX="97.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez suivre les indications du TPE" />
+      <AnchorPane>
+         <children>
+            <ButtonBar />
+            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;" />
+            <Text layoutX="259.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paiement">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TilePane alignment="CENTER" prefHeight="358.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <GridPane prefHeight="113.0" prefWidth="466.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="114.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.0" minWidth="10.0" prefWidth="248.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="103.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Votre commandes a bien été prise en compte. " textAlignment="CENTER" wrappingWidth="239.65966796875" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Veuiller suivre les indication du TPE" textAlignment="CENTER" wrappingWidth="242.65966796875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+         </children>
+      </TilePane>
    </children>
-</AnchorPane>
+</VBox>
