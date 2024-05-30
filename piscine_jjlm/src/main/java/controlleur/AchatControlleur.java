@@ -22,4 +22,16 @@ public class AchatControlleur {
 		Stage currentStage = (Stage) retour.getScene().getWindow();
         currentStage.close();
 	}
+	
+	public void GoToChoix() throws Exception {
+		//FXMLLoader loaderAchat = new FXMLLoader(getClass().getResource("achat.fxml"));
+		Parent rootChoix = FXMLLoader.load(getClass().getClassLoader().getResource("vue/choixFormule.fxml"));
+		Stage stageChoix = new Stage();
+
+		Scene sceneMain = new Scene(rootChoix, 600, 400);
+		stageChoix.setScene(sceneMain);
+		stageChoix.show();
+		Stage currentStage = (Stage) retour.getScene().getWindow();
+        currentStage.close();
+	}
 }

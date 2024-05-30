@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.PaiementControlleur">
    <children>
       <AnchorPane>
          <children>
@@ -32,9 +33,9 @@
          <children>
             <GridPane prefHeight="113.0" prefWidth="466.0">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="114.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.0" minWidth="10.0" prefWidth="248.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="103.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="116.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.0" minWidth="10.0" prefWidth="259.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="91.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
@@ -51,6 +52,10 @@
                         <Font size="15.0" />
                      </font>
                   </Text>
+                  <Button fx:id="retour" alignment="BOTTOM_CENTER" contentDisplay="TOP" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="23.0" text="Button" textAlignment="RIGHT" textOverrun="CLIP" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor></Button>
                </children>
             </GridPane>
          </children>

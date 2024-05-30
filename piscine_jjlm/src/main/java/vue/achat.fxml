@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.AchatControlleur">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.AchatControlleur">
    <children>
       <AnchorPane style="-fx-background-color: #AFFFF8;">
          <children>
@@ -38,7 +33,7 @@
       </AnchorPane>
       <TilePane alignment="CENTER" prefHeight="368.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;">
          <children>
-            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
+            <Button fx:id="Brequigny" mnemonicParsing="false" onAction="#GoToChoix" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -50,7 +45,7 @@
                   <Insets bottom="20.0" left="50.0" right="50.0" />
                </TilePane.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
+            <Button fx:id="Gayeulles" mnemonicParsing="false" onAction="#GoToChoix" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -62,7 +57,7 @@
                   <Insets bottom="20.0" left="50.0" right="50.0" />
                </TilePane.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
+            <Button fx:id="SaintGeorges" mnemonicParsing="false" onAction="#GoToChoix" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -74,7 +69,7 @@
                   <Insets bottom="20.0" left="50.0" right="50.0" />
                </TilePane.margin>
             </Button>
-            <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;">
+            <Button fx:id="villejean" mnemonicParsing="false" onAction="#GoToChoix" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                      <image>
