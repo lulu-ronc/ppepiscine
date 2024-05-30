@@ -14,7 +14,7 @@ import model.Professeur;
 public class ProfesseurDAOImpl implements ProfesseurDAO {
 
 	@Override
-	public Professeur get(int id) throws SQLException {
+	public Professeur read(int id) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		Professeur professeur = null;
 		ResultSet rs =null;
@@ -70,7 +70,7 @@ public class ProfesseurDAOImpl implements ProfesseurDAO {
 	}
 
 	@Override
-	public int add(Professeur professeur) throws SQLException {
+	public int create(Professeur professeur) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		String sql = "INSERT INTO Formule(id,nom,detente,competitif,surveillance_bassin,ID_piscine) VALUES(?,?,?,?,?,?)";
 		

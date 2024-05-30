@@ -9,12 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import dao.databaseConnection;
 import model.Formule;
+import model.Piscine;
 
 
 public class FormuleDAOImpl implements FormuleDAO {
 
 	@Override
-	public Formule get(int id) throws SQLException {
+	public Formule read(int id) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		Formule formule = null;
 		ResultSet rs =null;
@@ -25,13 +26,14 @@ public class FormuleDAOImpl implements FormuleDAO {
 		rs=ps.executeQuery();
 		
 		if(rs.next()) {
-			int oid = rs.getInt("id");
+			int oid = rs.getInt("id_formule");
 			String nom = rs.getString("nom");
 			int id_piscine = rs.getInt("id_piscine");
 			int duree_validite = rs.getInt("duree_validite");
 			int montant = rs.getInt("montant");
+			int quantite = rs.getInt("quantite");
 			int nbr_personnes = rs.getInt("nbr_personnes");
-			formule =new Formule(oid, nom, id_piscine, duree_validite, montant, nbr_personnes);
+			formule =new Formule(oid, nom, id_piscine, duree_validite, montant,quantite, nbr_personnes);
 		}
 		
 		
@@ -54,13 +56,14 @@ public class FormuleDAOImpl implements FormuleDAO {
 		rs = stmt.executeQuery(sql);
 		
 		while(rs.next()) {
-			int oid = rs.getInt("id");
+			int oid = rs.getInt("id_formule");
 			String nom = rs.getString("nom");
 			int id_piscine = rs.getInt("id_piscine");
 			int duree_validite = rs.getInt("duree_validite");
 			int montant = rs.getInt("montant");
+			int quantite = rs.getInt("quantite");
 			int nbr_personnes = rs.getInt("nbr_personnes");
-			formule =new Formule(oid, nom, id_piscine, duree_validite, montant, nbr_personnes);
+			formule =new Formule(oid, nom, id_piscine, duree_validite, montant,quantite, nbr_personnes);
 			listFormules.add(formule);
 		}
 		
@@ -72,9 +75,9 @@ public class FormuleDAOImpl implements FormuleDAO {
 	}
 
 	@Override
-	public int add(Formule formule) throws SQLException {
+	public int create(Formule formule) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "INSERT INTO Formule(id,nom,id_piscine,duree_validite,montant,nbr_personnes) VALUES(?,?,?,?,?,?)";
+		String sql = "INSERT INTO Formule(id_formule,nom,id_piscine,duree_validite,montant,nbr_personnes) VALUES(?,?,?,?,?,?)";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1,formule.getID());
@@ -102,7 +105,7 @@ public class FormuleDAOImpl implements FormuleDAO {
 	@Override
 	public int update(Formule formule) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "UPDATE Piscine SET id=?,nom=?, id_piscine=?,duree_validite=? montant=?,nbr_personnes=? WHERE id=?";
+		String sql = "UPDATE Piscine SET id_formule=?,nom=?, id_piscine=?,duree_validite=? montant=?,nbr_personnes=? WHERE id=?";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		

@@ -16,7 +16,7 @@ import model.AchatM;
 public class AchatMDAOImpl implements AchatMDAO {
 
 	@Override
-	public AchatM get(int id_achat) throws SQLException {
+	public AchatM read(int id_achat) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		AchatM achat = null;
 		ResultSet rs =null;
@@ -71,7 +71,7 @@ public class AchatMDAOImpl implements AchatMDAO {
 	}
 
 	@Override
-	public int add(AchatM achat) throws SQLException {
+	public int create(AchatM achat) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		String sql = "INSERT INTO Achat(id_achat,id_piscine,montant,date_achat) VALUES(?,?,?,?)";
 		

@@ -16,7 +16,7 @@ import model.Ticket;
 public class TicketDAOImpl implements TicketDAO {
 
 	@Override
-	public Ticket get(int id_ticket) throws SQLException {
+	public Ticket read(int id_ticket) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		Ticket ticket = null;
 		ResultSet rs =null;
@@ -77,7 +77,7 @@ public class TicketDAOImpl implements TicketDAO {
 	}
 
 	@Override
-	public int add(Ticket ticket) throws SQLException {
+	public int create(Ticket ticket) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		String sql = "INSERT INTO Ticket(id_ticket,id_formule,id_achat,id_prof,date_debut,quantite,code_validation) VALUES(?,?,?,?,?,?,?)";
 		

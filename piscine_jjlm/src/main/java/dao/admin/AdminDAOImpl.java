@@ -15,7 +15,7 @@ import model.Admin;
 public class AdminDAOImpl implements AdminDAO {
 
 	@Override
-	public Admin get(int id) throws SQLException {
+	public Admin read(int id) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		Admin admin = null;
 		ResultSet rs =null;
@@ -65,7 +65,7 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	@Override
-	public int add(Admin admin) throws SQLException {
+	public int create(Admin admin) throws SQLException {
 		Connection con = databaseConnection.getInstance();
 		String sql = "INSERT INTO Admin(id,nom,detente,) VALUES(?,?,?)";
 		
