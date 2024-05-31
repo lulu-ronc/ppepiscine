@@ -49,8 +49,8 @@
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="31.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="42.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="33.60001220703125" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="42.0" minHeight="0.0" prefHeight="35.19998779296875" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
@@ -330,7 +330,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prix total " textAlignment="CENTER" wrappingWidth="110.3994140625" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&quot; Prix total &quot;" textAlignment="CENTER" wrappingWidth="110.3994140625" GridPane.columnIndex="2" GridPane.rowIndex="8">
                      <font>
                         <Font size="14.0" />
                      </font>

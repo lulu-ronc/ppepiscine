@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="287.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.GestionTicketsControlleur">
+   <children>
+      <AnchorPane prefHeight="126.0" prefWidth="287.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;">
+         <children>
+            <Text layoutX="66.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation " textAlignment="CENTER" wrappingWidth="155.0">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Text>
+            <Text layoutX="28.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmez vous votre commande ?" textAlignment="CENTER" wrappingWidth="231.0">
+               <font>
+                  <Font size="15.0" />
+               </font></Text>
+            <Button fx:id="valider" layoutX="92.0" layoutY="80.0" mnemonicParsing="false" onAction="#Valider" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #3EEA0C; -fx-border-color: black; -fx-border-radius: 5;" text="Valider">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="251.0" layoutY="6.0" mnemonicParsing="false" prefHeight="13.0" prefWidth="6.0" style="-fx-background-color: #FFFFFF;">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/CroixBlanche.bmp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

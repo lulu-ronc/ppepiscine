@@ -19,20 +19,17 @@
       <AnchorPane style="-fx-background-color: #AFFFF8;">
          <children>
             <ButtonBar />
-            <Button fx:id="retour" layoutY="4.0" mnemonicParsing="false" onAction="#Retour" style="-fx-background-color: #AFFFF8;">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@image/fleche.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <Button fx:id="retour" layoutX="564.0" layoutY="4.0" mnemonicParsing="false" onAction="#Retour" style="-fx-background-color: #AFFFF8;" />
             <Text layoutX="248.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panel Admin">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Text>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="577.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/Croix.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <TilePane alignment="CENTER" prefHeight="358.0" prefWidth="600.0">

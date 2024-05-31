@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="287.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.GestionTicketsControlleur">
+   <children>
+      <AnchorPane prefHeight="249.0" prefWidth="287.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5;">
+         <children>
+            <Text layoutX="78.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout d'une Formule" textAlignment="CENTER" wrappingWidth="132.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Text>
+            <Button fx:id="valider1" layoutX="92.0" layoutY="199.0" mnemonicParsing="false" onAction="#Valider" prefHeight="33.0" prefWidth="103.0" style="-fx-background-color: #3EEA0C; -fx-border-color: black; -fx-border-radius: 5;" text="Valider">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="42.0" layoutY="40.0" prefHeight="27.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+               <children>
+                  <TextField layoutX="2.0" layoutY="1.0" prefHeight="31.0" prefWidth="200.0" promptText="Nom" style="-fx-border-width: 3; -fx-border-radius: 3; -fx-background-color: #FFFFFF;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="42.0" layoutY="89.0" prefHeight="27.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+               <children>
+                  <TextField layoutX="1.0" layoutY="2.0" prefHeight="31.0" prefWidth="200.0" promptText=" Montant" style="-fx-border-width: 3; -fx-border-radius: 3; -fx-background-color: #FFFFFF;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="42.0" layoutY="138.0" prefHeight="27.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+               <children>
+                  <TextField layoutX="2.0" layoutY="1.0" prefHeight="31.0" prefWidth="200.0" promptText="Durée de Validité" style="-fx-border-width: 3; -fx-border-radius: 3; -fx-background-color: #FFFFFF;" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
