@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.GestionFormulesControlleur">
+   <children>
+      <AnchorPane>
+         <children>
+            <ButtonBar />
+            <Button fx:id="retour" mnemonicParsing="false" onAction="#Retour" style="-fx-background-color: #AFFFF8;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/fleche.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Text layoutX="205.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Formules">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button layoutX="557.0" layoutY="5.0" mnemonicParsing="false" style="-fx-background-color: #AFFFF8;" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="573.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/Ajouter.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="371.0" prefWidth="600.0">
+         <children>
+            <TableView layoutX="67.0" layoutY="34.0" prefHeight="303.0" prefWidth="466.0" style="-fx-background-color: AFFFF8;">
+              <columns>
+                <TableColumn prefWidth="387.0" style="-fx-background-color: #5FFFF8;" text="Nom Formule" />
+                <TableColumn minWidth="2.0" prefWidth="40.0" style="-fx-background-color: #5FFFF8;" />
+                  <TableColumn prefWidth="38.0" style="-fx-background-color: #5FFFF8;" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
