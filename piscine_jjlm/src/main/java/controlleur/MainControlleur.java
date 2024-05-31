@@ -11,10 +11,6 @@ import javafx.stage.Stage;
 public class MainControlleur {
 	@FXML
 	private Button achat;
-	
-	
-	
-	
 
 
 
@@ -52,6 +48,18 @@ public class MainControlleur {
 		Scene sceneModifier = new Scene(rootModifier, 600, 400);
 		stageModifier.setScene(sceneModifier);
 		stageModifier.show();
+		Stage currentStage = (Stage) achat.getScene().getWindow();
+        currentStage.close();
+	}
+	
+	public void goToAdmin() throws Exception {
+		//FXMLLoader loaderAchat = new FXMLLoader(getClass().getResource("achat.fxml"));
+		Parent rootAdmin = FXMLLoader.load(getClass().getClassLoader().getResource("vue/authentification.fxml"));
+		Stage stageAdmin = new Stage();
+
+		Scene sceneAdmin = new Scene(rootAdmin, 600, 400);
+		stageAdmin.setScene(sceneAdmin);
+		stageAdmin.show();
 		Stage currentStage = (Stage) achat.getScene().getWindow();
         currentStage.close();
 	}

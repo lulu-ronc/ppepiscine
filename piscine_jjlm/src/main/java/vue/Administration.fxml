@@ -14,12 +14,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AFFFF8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlleur.AdministrationControlleur">
    <children>
       <AnchorPane style="-fx-background-color: #AFFFF8;">
          <children>
             <ButtonBar />
-            <Button fx:id="retour" layoutY="4.0" mnemonicParsing="false" onAction="#RetourMain" style="-fx-background-color: #AFFFF8;">
+            <Button fx:id="retour" layoutY="4.0" mnemonicParsing="false" onAction="#Retour" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -49,16 +49,16 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;" GridPane.rowIndex="1">
+                  <Button fx:id="formules" mnemonicParsing="false" onAction="#GoToFormules" style="-fx-background-color: #AFFFF8;" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/Gestion%20des%20Tickets.png" />
+                              <Image url="@image/Gestion%20des%20Formules.PNG" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #AFFFF8;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button fx:id="tickets" mnemonicParsing="false" onAction="#GoToTickets" style="-fx-background-color: #AFFFF8;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
