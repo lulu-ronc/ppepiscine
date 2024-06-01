@@ -1,6 +1,7 @@
 package dao.formule;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -151,5 +152,28 @@ public class FormuleDAOImpl implements FormuleDAO {
 
 		return result;
 	}
+	
+	public List<Formule> getFormulesByPiscineId(int piscineId) throws SQLException {
+		Connection con = databaseConnection.getInstance();
+		List<Formule> formuleList = new ArrayList<>();
+        String sql = "SELECT * FROM formule WHERE id_piscine = ?";
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, piscineId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+            	Formule formule = new Formule(
+            	 rs.getInt("id_formule"),  // Utilisez le nom correct de la colonne
+                 rs.getString("nom"),
+                 rs.getInt("id_piscine"),
+                 rs.getInt("duree_validite"),
+                 rs.getInt("montant"),
+                 rs.getInt("quantite"),
+                 rs.getInt("nbr_personnes")
+             );
+                formuleList.add(formule);
+            }
+        }
+        return formuleList;
+    }
 
 }

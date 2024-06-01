@@ -145,6 +145,25 @@ public class PiscineDAOImpl implements PiscineDAO {
 		
 		return result;
 	}
+	
+	public int getIdByName(String nom) throws SQLException {
+		Connection con = databaseConnection.getInstance();
+        String sql = "SELECT id_piscine FROM piscine WHERE nom = ?";
+        String nom2;
+        if(nom=="SaintGeorges") {
+        	nom2= "Saint-Georges";
+        }else {
+        	nom2=nom;
+        }
+        try (PreparedStatement statement = con.prepareStatement(sql)) {
+            statement.setString(1, nom2);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt("id_piscine");
+            }
+        }
+        return -1; // Indique que la piscine n'a pas été trouvée
+    }
 
 
 
