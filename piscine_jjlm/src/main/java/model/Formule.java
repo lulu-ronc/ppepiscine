@@ -1,31 +1,39 @@
 package model;
 
 public class Formule {
-	private int ID;
-	private String nom;
+	private int id_formule;
 	private int id_piscine;
 	private int duree_validite;
+	private String nom;
 	private int montant;
-	private int nbr_personnes;
 	
-	public Formule(int ID, String nom, int id_piscine,int duree_validite,int montant, int nbr_personnes) {
+	
+	public Formule() {
+    }
+	
+	public Formule(int id_formule, int id_piscine,int duree_validite, String nom,int montant) {
 		super();
-		this.ID = ID;
-		this.nom = nom;
+		this.id_formule = id_formule;
 		this.id_piscine = id_piscine;
 		this.duree_validite=duree_validite;
-		this.montant = montant;
-		this.nbr_personnes = nbr_personnes;
+		this.nom = nom;
+		this.montant = montant;	
+	}
+	public Formule( int id_piscine,int duree_validite, String nom,int montant) {
 		
+		this.id_piscine = id_piscine;
+		this.duree_validite=duree_validite;
+		this.nom = nom;
+		this.montant = montant;	
 	}
 	
 	
 	public int getID() {
-		return ID;
+		return id_formule;
 	}
 	
-	public void setID(int ID) {
-		this.ID=ID;
+	public void setID(int id_formule) {
+		this.id_formule=id_formule;
 	}
 	
 	public String getNom() {
@@ -63,14 +71,7 @@ public class Formule {
 		this.montant = montant;
 	}
 	
-	public int getNbr_personnes() {
-		return nbr_personnes;
-	}
 	
-	
-	public void setNbr_personnes(int nbr_personnes) {
-		this.nbr_personnes = nbr_personnes;
-	}
 	
 }
 

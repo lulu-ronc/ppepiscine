@@ -46,11 +46,12 @@ public class Piscine {
 		this.nbr_bassin = nbr_bassin;	
 	}
 
-	@Override
-	public String toString() {
-		return "Piscine [ID=" + ID + ", nom=" + nom + ", adresse=" + adresse + ", nbr_bassin=" + nbr_bassin + "]";
-	}
 	
+	
+	@Override
+    public String toString() {
+        return nom;
+    }
 	
 		
 }

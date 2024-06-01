@@ -32,9 +32,7 @@ public class FormuleDAOImpl implements FormuleDAO {
 			int id_piscine = rs.getInt("id_piscine");
 			int duree_validite = rs.getInt("duree_validite");
 			int montant = rs.getInt("montant");
-			int quantite = rs.getInt("quantite");
-			int nbr_personnes = rs.getInt("nbr_personnes");
-			formule =new Formule(oid, nom, id_piscine, duree_validite, montant,quantite, nbr_personnes);
+			formule =new Formule(oid, duree_validite, id_piscine, nom, montant);
 		}
 		
 		
@@ -62,9 +60,7 @@ public class FormuleDAOImpl implements FormuleDAO {
 			int id_piscine = rs.getInt("id_piscine");
 			int duree_validite = rs.getInt("duree_validite");
 			int montant = rs.getInt("montant");
-			int quantite = rs.getInt("quantite");
-			int nbr_personnes = rs.getInt("nbr_personnes");
-			formule =new Formule(oid, nom, id_piscine, duree_validite, montant,quantite, nbr_personnes);
+			formule =new Formule(oid, duree_validite, id_piscine, nom, montant);
 			listFormules.add(formule);
 		}
 		
@@ -78,15 +74,18 @@ public class FormuleDAOImpl implements FormuleDAO {
 	@Override
 	public int create(Formule formule) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "INSERT INTO Formule(id_formule,nom,id_piscine,duree_validite,montant,nbr_personnes) VALUES(?,?,?,?,?,?)";
-		
+		String sql = "INSERT INTO Formule(id_piscine,duree_validite,nom,montant) VALUES(?,?,?,?)";
+		if (con == null || con.isClosed()) {
+            System.out.println("La connexion est fermée ou invalide.");
+            
+        }
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1,formule.getID());
-		ps.setString(2,formule.getNom());
-		ps.setInt(3,formule.getId_piscine());
-		ps.setInt(4,formule.getDuree_validite());
-		ps.setInt(5,formule.getMontant());
-		ps.setInt(6,formule.getNbr_personnes());
+		
+		ps.setInt(1,formule.getId_piscine());
+		ps.setInt(2,formule.getDuree_validite());
+		ps.setString(3,formule.getNom());
+		ps.setInt(4,formule.getMontant());
+		
 		
 		int result = ps.executeUpdate();
 		
@@ -115,7 +114,7 @@ public class FormuleDAOImpl implements FormuleDAO {
 		ps.setInt(3, formule.getId_piscine());
 		ps.setInt(4, formule.getDuree_validite());
 		ps.setInt(5, formule.getMontant());
-		ps.setInt(6, formule.getNbr_personnes());
+		
 		
 		int result = ps.executeUpdate();
 		
@@ -163,12 +162,11 @@ public class FormuleDAOImpl implements FormuleDAO {
             while (rs.next()) {
             	Formule formule = new Formule(
             	 rs.getInt("id_formule"),  // Utilisez le nom correct de la colonne
-                 rs.getString("nom"),
-                 rs.getInt("id_piscine"),
                  rs.getInt("duree_validite"),
-                 rs.getInt("montant"),
-                 rs.getInt("quantite"),
-                 rs.getInt("nbr_personnes")
+                 rs.getInt("id_piscine"),
+                 rs.getString("nom"),
+                 rs.getInt("montant")
+                 
              );
                 formuleList.add(formule);
             }
