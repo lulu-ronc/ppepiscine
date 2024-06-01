@@ -27,7 +27,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("vue/Main.fxml"));
+			Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("vue/gestionFormulesAdminPopUpNouvelleFormule.fxml"));
 
 			//Le conteneur principal de l'application(gère dimensions, style,..)
 			Scene scene1 = new Scene(root, 600, 400);
