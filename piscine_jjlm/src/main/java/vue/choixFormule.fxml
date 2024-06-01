@@ -37,6 +37,7 @@
       </AnchorPane>
       <AnchorPane prefHeight="374.0" prefWidth="605.0">
          <children>
+
             <TableView fx:id="listFormule" layoutX="65.0" layoutY="31.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="470.0" style="-fx-background-color: #AFFFF8;">
               <columns>
                 <TableColumn fx:id="colonneFormule" prefWidth="157.5999755859375" style="-fx-background-color: #AFFFF8;" text="Formules" />
@@ -48,6 +49,7 @@
               </columns>
             </TableView>
             <Text layoutX="245.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix total : " textAlignment="CENTER" wrappingWidth="110.3994140625">
+
                <font>
                   <Font size="14.0" />
                </font>
@@ -57,7 +59,9 @@
                      <Font name="System Bold" size="12.0" />
                   </font>
                </Button>
+
             <Label fx:id="prixTotal" layoutX="331.0" layoutY="296.0" text="Label" />
+
          </children>
       </AnchorPane>
    </children>
