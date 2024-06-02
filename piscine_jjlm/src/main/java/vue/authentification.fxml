@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -41,12 +42,15 @@
          <children>
             <FlowPane prefHeight="170.0" prefWidth="149.0">
                <children>
-                  <TextField promptText="Identifiant" style="-fx-border-color: #08EAFD; -fx-border-width: 3; -fx-border-radius: 3;" />
+                  <TextField fx:id="txtLogin" promptText="Identifiant" style="-fx-border-color: #08EAFD; -fx-border-width: 3; -fx-border-radius: 3;" />
                   <FlowPane prefHeight="40.0" prefWidth="148.0" />
-                  <PasswordField promptText="Mot de passe" style="-fx-border-color: #08EAFD; -fx-border-radius: 3; -fx-border-width: 3;" />
-                  <FlowPane prefHeight="38.0" prefWidth="148.0" />
+                  <PasswordField fx:id="txtPassword" promptText="Mot de passe" style="-fx-border-color: #08EAFD; -fx-border-radius: 3; -fx-border-width: 3;" />
+                  <FlowPane prefHeight="38.0" prefWidth="148.0">
+                     <children>
+                        <Label fx:id="labelEtat" prefHeight="32.0" prefWidth="148.0" />
+                     </children></FlowPane>
                   <FlowPane prefHeight="41.0" prefWidth="37.0" />
-                  <Button fx:id="connexion" mnemonicParsing="false" onAction="#Connexion" style="-fx-background-color: #08EAFD; -fx-background-radius: 15px;" text="Connexion" />     
+                  <Button fx:id="connexion" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #08EAFD; -fx-background-radius: 15px;" text="Connexion" />     
                </children>
             </FlowPane>
          </children>
