@@ -19,13 +19,7 @@ public class Formule {
 		this.nom = nom;
 		this.montant = montant;	
 	}
-	public Formule( int id_piscine,int duree_validite, String nom,int montant) {
-		
-		this.id_piscine = id_piscine;
-		this.duree_validite=duree_validite;
-		this.nom = nom;
-		this.montant = montant;	
-	}
+	
 	
 	
 	public int getID() {
@@ -69,6 +63,12 @@ public class Formule {
 	
 	public void setMontant(int montant) {
 		this.montant = montant;
+	}
+
+	@Override
+	public String toString() {
+		return "Formule [id_formule=" + id_formule + ", id_piscine=" + id_piscine + ", duree_validite=" + duree_validite
+				+ ", nom=" + nom + ", montant=" + montant + "]";
 	}
 	
 	

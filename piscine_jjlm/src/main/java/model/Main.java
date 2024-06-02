@@ -19,8 +19,11 @@ public class Main extends Application {
 	
 
 	public static void main(String[] args) throws SQLException {
-
-		
+//		PiscineDAOImpl piscineDAO = new PiscineDAOImpl();
+//		Piscine piscine = piscineDAO.read(1);
+//		System.out.println(piscine);
+//		FormuleDAOImpl formuleDAO = new FormuleDAOImpl();
+//		System.out.println(formule);
 		launch(args);
 	}
 
