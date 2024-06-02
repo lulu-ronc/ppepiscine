@@ -21,7 +21,7 @@ public class FormuleDAOImpl implements FormuleDAO {
 		Formule formule = null;
 		ResultSet rs =null;
 		
-		String sql ="SELECT * FROM Formule WHERE id=?";
+		String sql ="SELECT * FROM Formule WHERE id_formule=?";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1,id);
 		rs=ps.executeQuery();
