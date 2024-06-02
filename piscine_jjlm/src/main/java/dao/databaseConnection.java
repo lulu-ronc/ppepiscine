@@ -54,6 +54,18 @@ public class databaseConnection {
 	public static void closeConnection(Connection connection) throws SQLException{
 		connection.close();
 	}
+
+	public static void closeConnectionNoArg() {
+        if (connexionDB != null) {
+            try {
+                connexionDB.close();
+                connexionDB = null; // Reset the instance to ensure it can be reinitialized
+                System.out.println("Connexion fermée.");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 	
 	public static void closeStatement(Statement statement) throws SQLException{
 		statement.close();
