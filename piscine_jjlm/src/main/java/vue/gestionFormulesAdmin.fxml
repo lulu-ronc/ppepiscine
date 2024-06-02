@@ -15,7 +15,7 @@
    <children>
       <AnchorPane>
          <children>
-            <ButtonBar />
+            
             <Button fx:id="retour" mnemonicParsing="false" onAction="#Retour" style="-fx-background-color: #AFFFF8;">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">

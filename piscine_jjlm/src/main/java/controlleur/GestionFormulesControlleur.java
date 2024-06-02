@@ -43,14 +43,19 @@ public class GestionFormulesControlleur {
 
 
 public void initialize() {
-	try {
-		List<Piscine> listPiscines= piscineDAO.getAll();
-		listPiscine.getItems().addAll(listPiscines);
-		
-		
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}
+	 try {
+	        List<Piscine> listPiscines = piscineDAO.getAll();
+	        
+	        // Ajout de vérifications de débogage
+	        if (listPiscine == null) {
+	            System.out.println("listPiscine est null. Vérifiez l'ID dans le fichier FXML.");
+	        } else {
+	            listPiscine.getItems().addAll(listPiscines);
+	            System.out.println("Les piscines ont été ajoutées à la ComboBox.");
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
 }
 	
 
