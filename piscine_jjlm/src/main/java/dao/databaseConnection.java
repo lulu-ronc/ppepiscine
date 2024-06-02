@@ -8,10 +8,10 @@ import java.sql.Statement;
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 
 public class databaseConnection {
-	
+
 	private static Connection connexionDB;
 	private static final String USERNAME= "Jimmy";
-	private static final String PASSWORD= "admin";
+	private static final String PASSWORD= "0813Ob5kOb5k";
 	private static final String SQL_SERVER = "PCDEJIM\\SQLEXPRESS01"; 
 	private static final String DATABASE= "UnePiscine";
 
@@ -40,12 +40,13 @@ public class databaseConnection {
 		return connexionDB;
 	}
 
-	
+
 	public static Connection getInstance(){
 		if(connexionDB== null) {
-			 databaseConnection con = new databaseConnection();
-			 connexionDB = con.Connect();
+			databaseConnection con = new databaseConnection();
+			connexionDB = con.Connect();
 			System.out.println("connecté");
+
 		}
 		return connexionDB;	
 	}
@@ -67,16 +68,28 @@ public class databaseConnection {
         }
     }
 	
+	public static void closeConnectionNoArg() {
+        if (connexionDB != null) {
+            try {
+                connexionDB.close();
+                connexionDB = null; // Reset the instance to ensure it can be reinitialized
+                System.out.println("Connexion fermée.");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 	public static void closeStatement(Statement statement) throws SQLException{
 		statement.close();
 	}
-	
+
 	public static void closePreparedStatement(PreparedStatement preparedStatement) throws SQLException{
 		preparedStatement.close();
 	}
-	
+
 	public static void closeResultSet(ResultSet resultset) throws SQLException{
 		resultset.close();
 	}
-	
+
 }
