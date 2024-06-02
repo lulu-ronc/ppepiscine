@@ -10,9 +10,9 @@ import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 public class databaseConnection {
 
 	private static Connection connexionDB;
-	private static final String USERNAME= "Jimmy";
-	private static final String PASSWORD= "0813Ob5kOb5k";
-	private static final String SQL_SERVER = "PCDEJIM\\SQLEXPRESS01"; 
+	private static final String USERNAME= "Benjamin";
+	private static final String PASSWORD= "123data123";
+	private static final String SQL_SERVER = "DESKTOP-7BK8B6K\\SQLEXPRESS01"; 
 	private static final String DATABASE= "UnePiscine";
 
 	public static Connection Connect() {

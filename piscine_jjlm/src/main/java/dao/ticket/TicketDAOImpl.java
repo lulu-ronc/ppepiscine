@@ -138,7 +138,7 @@ public class TicketDAOImpl implements TicketDAO {
 	@Override
 	public int delete(Ticket ticket) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "DELETE FROM Ticket WHERE id=?";
+		String sql = "DELETE FROM Ticket WHERE id_ticket=?";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, ticket.getId_ticket());

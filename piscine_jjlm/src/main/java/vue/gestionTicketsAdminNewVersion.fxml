@@ -24,7 +24,8 @@
                         <Image url="@image/fleche.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+            </Button>
             <Text layoutX="205.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Tickets">
                <font>
                   <Font size="20.0" />
@@ -34,11 +35,11 @@
       </AnchorPane>
       <AnchorPane prefHeight="373.0" prefWidth="600.0">
          <children>
-            <TableView layoutX="81.0" layoutY="72.0" prefHeight="287.0" prefWidth="450.0" style="-fx-background-color: #AFFFF8;">
-              <columns>
-                <TableColumn prefWidth="395.0" style="-fx-background-color: #AFFFF8;" />
-                <TableColumn prefWidth="54.0" style="-fx-background-color: #AFFFF8;" />
-              </columns>
+            <TableView fx:id="tableView" layoutX="81.0" layoutY="72.0" prefHeight="287.0" prefWidth="450.0" style="-fx-background-color: #AFFFF8;">
+               <columns>
+                  <TableColumn fx:id="idTicketColumn" prefWidth="395.0" style="-fx-background-color: #AFFFF8;" text="ID Ticket" />
+                  <TableColumn fx:id="actionColumn" text="Actions" prefWidth="54.0" style="-fx-background-color: #AFFFF8;" />
+               </columns>
             </TableView>
             <TextField layoutX="81.0" layoutY="41.0" prefHeight="31.0" prefWidth="450.0" promptText="Code Ticket" style="-fx-border-color: #08EAFD; -fx-border-width: 3; -fx-border-radius: 3;" />
          </children>
