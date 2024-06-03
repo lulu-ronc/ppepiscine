@@ -29,9 +29,9 @@ public class PiscineDAOImpl implements PiscineDAO {
 		if(rs.next()) {
 			int oid = rs.getInt("id_piscine");
 			String nom = rs.getString("nom");
-			String adresse = rs.getString("adresse");
+			String description = rs.getString("description");
 			int nbr_bassins = rs.getInt("nbr_bassins");
-			piscine = new Piscine(oid,nom,adresse,nbr_bassins);
+			piscine = new Piscine(oid,nom,description,nbr_bassins);
 		}
 		
 		databaseConnection.closeResultSet(rs);
@@ -54,10 +54,10 @@ public class PiscineDAOImpl implements PiscineDAO {
 		while(rs.next()) {
 			int id = rs.getInt("id_piscine");
 			String nom = rs.getString("nom");
-			String adresse = rs.getString("adresse");
+			String description = rs.getString("description");
 			int nbr_bassins = rs.getInt("nbr_bassins");
 			
-			Piscine piscine = new Piscine(id, nom, adresse,nbr_bassins);
+			Piscine piscine = new Piscine(id, nom, description,nbr_bassins);
 			listPiscines.add(piscine);
 		}
 		
@@ -71,13 +71,13 @@ public class PiscineDAOImpl implements PiscineDAO {
 	@Override
 	public int create(Piscine piscine) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "INSERT INTO Piscine(id_piscine,nom,adresse,nbr_bassins) VALUES(?,?)";
+		String sql = "INSERT INTO Piscine(id_piscine,nom,description,nbr_bassins) VALUES(?,?)";
 		
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, piscine.getID());
 		ps.setString(2, piscine.getNom());
-		ps.setString(3, piscine.getAdresse());
+		ps.setString(3, piscine.getDescription());
 		ps.setInt(4, piscine.getNbrBassin());
 		
 		int result = ps.executeUpdate();
@@ -101,13 +101,13 @@ public class PiscineDAOImpl implements PiscineDAO {
 	@Override
 	public int update(Piscine piscine) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "UPDATE Piscine SET id_piscine=?,nom=?, adresse=?,nbr_bassins=? WHERE id_piscine=?";
+		String sql = "UPDATE Piscine SET id_piscine=?,nom=?, description=?,nbr_bassins=? WHERE id_piscine=?";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		
 		ps.setInt(1, piscine.getID());
 		ps.setString(2, piscine.getNom());
-		ps.setString(3, piscine.getAdresse());
+		ps.setString(3, piscine.getDescription());
 		ps.setInt(4, piscine.getNbrBassin());
 		
 		int result = ps.executeUpdate();

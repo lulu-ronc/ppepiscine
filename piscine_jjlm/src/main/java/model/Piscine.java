@@ -1,11 +1,21 @@
 package model;
 
+
 public class Piscine {
 	private int ID;
 	private String nom;
-	private String adresse ;
+	private String description ;
 	private int nbr_bassin;
 	
+	public Piscine(int ID, String nom, String description, int nbr_bassin) {
+		this.ID = ID;
+		this.nom = nom;
+		this.description=description;
+		this.nom = nom;
+		this.nbr_bassin = nbr_bassin;	
+	}
+	
+
 	public int getID() { 
 		return ID;
 	}
@@ -23,12 +33,12 @@ public class Piscine {
 		this.nom = nom;
 	}
 	
-	public String getAdresse() {
-		return adresse;
+	public String getDescription() {
+		return description;
 	}
 	
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
+	public void setDescription(String adresse) {
+		this.description = adresse;
 	}
 	
 	public int getNbrBassin() {
@@ -37,13 +47,6 @@ public class Piscine {
 	
 	public void setNbrBassin(int nbr_bassin) {
 		this.nbr_bassin=nbr_bassin;
-	}
-	
-	public Piscine(int ID, String nom, String adresse, int nbr_bassin) {
-		this.ID= ID;
-		this.nom = nom;
-		this.adresse = adresse;
-		this.nbr_bassin = nbr_bassin;	
 	}
 
 	

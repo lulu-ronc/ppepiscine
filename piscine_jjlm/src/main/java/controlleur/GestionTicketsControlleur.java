@@ -14,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Ticket;
@@ -42,8 +44,15 @@ public class GestionTicketsControlleur {
     public void initialize() {
         idTicketColumn.setCellValueFactory(new PropertyValueFactory<>("id_ticket"));
         actionColumn.setCellValueFactory(param -> {
-            Button deleteButton = new Button("Supprimer");
+            ImageView deleteIcon = new ImageView("vue/image/Poubelle.PNG");
+            deleteIcon.setFitHeight(16); // Ajustez la taille de l'image selon vos besoins
+            deleteIcon.setFitWidth(16); // Ajustez la taille de l'image selon vos besoins
+            
+            Button deleteButton = new Button();
+            deleteButton.setGraphic(deleteIcon);
             deleteButton.setOnAction(event -> showDeleteConfirmation(param.getValue()));
+            deleteButton.setStyle("-fx-background-color: #AFFFF8;");
+            
             return new SimpleObjectProperty<>(deleteButton);
         });
 
@@ -52,6 +61,7 @@ public class GestionTicketsControlleur {
 
     private void loadTickets() {
         try {
+            databaseConnection.closeConnectionNoArg();
             List<Ticket> tickets = ticketDAO.getAll();
             ObservableList<Ticket> ticketList = FXCollections.observableArrayList(tickets);
             tableView.setItems(ticketList);

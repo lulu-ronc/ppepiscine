@@ -29,14 +29,13 @@ public class TicketDAOImpl implements TicketDAO {
 		
 
 		if(rs.next()) {
-			int oid = rs.getInt("id_ticket");
+			int id = rs.getInt("id_ticket");
 			int id_formule = rs.getInt("id_formule");
 			int id_achat = rs.getInt("id_achat");
-			int id_prof = rs.getInt("id_prof");
 			Date date_debut = rs.getDate("date_debut");
 			int quantite = rs.getInt("quantite");
-			int code_validation = rs.getInt("code_validation");
-			ticket = new Ticket(oid, id_formule, id_achat, id_prof,date_debut, quantite, code_validation);
+			int code_validation = rs.getInt("code");
+			ticket = new Ticket(id, id_formule, id_achat, date_debut, quantite, code_validation);
 		}
 		
 		databaseConnection.closeResultSet(rs);
@@ -61,11 +60,10 @@ public class TicketDAOImpl implements TicketDAO {
 			int id = rs.getInt("id_ticket");
 			int id_formule = rs.getInt("id_formule");
 			int id_achat = rs.getInt("id_achat");
-			int id_prof = rs.getInt("id_prof");
 			Date date_debut = rs.getDate("date_debut");
 			int quantite = rs.getInt("quantite");
-			int code_validation = rs.getInt("code_validation");
-			ticket = new Ticket(id, id_formule, id_achat, id_prof,date_debut, quantite, code_validation);;
+			int code_validation = rs.getInt("code");
+			ticket = new Ticket(id, id_formule, id_achat, date_debut, quantite, code_validation);;
 			listTickets.add(ticket);
 		}
 		
@@ -79,14 +77,13 @@ public class TicketDAOImpl implements TicketDAO {
 	@Override
 	public int create(Ticket ticket) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "INSERT INTO Ticket(id_ticket,id_formule,id_achat,id_prof,date_debut,quantite,code_validation) VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO Ticket(id_ticket,id_formule,id_achat,date_debut,quantite,code_validation) VALUES(?,?,?,?,?,?,?)";
 		
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, ticket.getId_ticket());
 		ps.setInt(2, ticket.getId_formule());
 		ps.setInt(3, ticket.getId_achat());
-		ps.setInt(4, ticket.getId_prof());
 		ps.setDate(4, ticket.getDate_debut());
 		ps.setInt(4, ticket.getQuantite());
 		ps.setInt(4, ticket.getCode_validation());
@@ -109,14 +106,13 @@ public class TicketDAOImpl implements TicketDAO {
 	@Override
 	public int update(Ticket ticket) throws SQLException {
 		Connection con = databaseConnection.getInstance();
-		String sql = "UPDATE Ticket SET id_ticket=?,id_formule=?, id_achat=?,id_prof=?,date_debut=?,quantite=?,code_validation=? WHERE id_ticket=?";
+		String sql = "UPDATE Ticket SET id_ticket=?,id_formule=?, id_achat=?,date_debut=?,quantite=?,code=? WHERE id_ticket=?";
 		
 		PreparedStatement ps = con.prepareStatement(sql);
 		
 		ps.setInt(1, ticket.getId_ticket());
 		ps.setInt(2, ticket.getId_formule());
 		ps.setInt(3, ticket.getId_achat());
-		ps.setInt(4, ticket.getId_prof());
 		ps.setDate(4, ticket.getDate_debut());
 		ps.setInt(4, ticket.getQuantite());
 		ps.setInt(4, ticket.getCode_validation());

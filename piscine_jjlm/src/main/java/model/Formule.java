@@ -1,23 +1,18 @@
 package model;
 
 public class Formule {
-	private int id_formule;
+	public int id_formule;
 	private int id_piscine;
 	private int duree_validite;
 	private String nom;
-	private int montant;
-	
-	
-	public Formule() {
-    }
-	
-	public Formule(int id_formule, int id_piscine,int duree_validite, String nom,int montant) {
-		super();
+	private int prix;
+
+	public Formule(int id_formule, int duree_validite2,int duree_validite, String nom,int prix) {
 		this.id_formule = id_formule;
-		this.id_piscine = id_piscine;
+		this.id_piscine = duree_validite2;
 		this.duree_validite=duree_validite;
 		this.nom = nom;
-		this.montant = montant;	
+		this.prix = prix;	
 	}
 	
 	
@@ -57,18 +52,18 @@ public class Formule {
 	}
 	
 	public int getMontant() {
-		return montant;
+		return prix;
 	}
 	
 	
 	public void setMontant(int montant) {
-		this.montant = montant;
+		this.prix = montant;
 	}
 
 	@Override
 	public String toString() {
 		return "Formule [id_formule=" + id_formule + ", id_piscine=" + id_piscine + ", duree_validite=" + duree_validite
-				+ ", nom=" + nom + ", montant=" + montant + "]";
+				+ ", nom=" + nom + ", prix=" + prix + "]";
 	}
 	
 	
